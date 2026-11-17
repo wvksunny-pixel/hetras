@@ -1,0 +1,106 @@
+/* =========================================================
+   HETRAS × WORLD VISION — Design System
+   16:9 · 1920×1080 stage, scaled to fit the window
+   ========================================================= */
+:root{
+  --ivory:#F7F4EF;
+  --beige:#E9DFD2;
+  --brown:#392D25;
+  --burgundy:#713D43;
+  --gold:#B7A17C;
+  --ink:#2A211B;          /* body text on light */
+  --muted:#7D6F63;        /* captions on light */
+  --line:rgba(57,45,37,.16);
+  --serif:"Cormorant Garamond","Noto Serif KR",Georgia,serif;
+  --sans:"Pretendard","Pretendard Variable","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --W:1920px; --H:1080px;
+  --pad:120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#1d1713;overflow:hidden}
+body{font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all}
+
+/* ---------- stage ---------- */
+.deck{position:absolute;left:50%;top:50%;width:var(--W);height:var(--H);transform-origin:center center}
+.slide{position:absolute;inset:0;width:var(--W);height:var(--H);overflow:hidden;background:var(--ivory);
+  opacity:0;visibility:hidden;transition:opacity .7s ease,visibility 0s linear .7s}
+.slide.active{opacity:1;visibility:visible;transition:opacity .7s ease,visibility 0s}
+.slide .rv{opacity:0;transform:translateY(18px);transition:opacity .9s ease,transform .9s ease}
+.slide.active .rv{opacity:1;transform:none}
+.slide.active .rv.d1{transition-delay:.15s}.slide.active .rv.d2{transition-delay:.3s}
+.slide.active .rv.d3{transition-delay:.45s}.slide.active .rv.d4{transition-delay:.6s}
+
+/* themes */
+.t-dark{background:var(--brown);color:var(--ivory)}
+.t-wine{background:var(--burgundy);color:var(--ivory)}
+.t-beige{background:var(--beige)}
+
+/* ---------- running frame (header / footer) ---------- */
+.frame{position:absolute;left:var(--pad);right:var(--pad);top:56px;display:flex;justify-content:space-between;
+  font:500 15px/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.t-dark .frame,.t-wine .frame{color:rgba(247,244,239,.55)}
+.folio{position:absolute;right:var(--pad);bottom:52px;font:400 18px/1 var(--serif);letter-spacing:.12em;color:var(--muted)}
+.t-dark .folio,.t-wine .folio{color:rgba(247,244,239,.5)}
+
+/* ---------- type scale ---------- */
+.eyebrow{font:600 16px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--gold)}
+.display{font:400 132px/0.98 var(--serif);letter-spacing:-.01em}
+.h1{font:400 88px/1.04 var(--serif);letter-spacing:-.005em}
+.h2{font:400 60px/1.1 var(--serif)}
+.ko-h{font:600 54px/1.32 var(--sans);letter-spacing:-.025em}
+.ko-h2{font:600 40px/1.38 var(--sans);letter-spacing:-.02em}
+.ko-h3{font:600 28px/1.4 var(--sans);letter-spacing:-.015em}
+.lead{font:400 26px/1.7 var(--sans);letter-spacing:-.01em;color:var(--muted)}
+.t-dark .lead,.t-wine .lead{color:rgba(247,244,239,.72)}
+.body{font:400 21px/1.7 var(--sans);color:var(--muted)}
+.t-dark .body,.t-wine .body{color:rgba(247,244,239,.7)}
+.serif-i{font-family:var(--serif);font-style:italic;font-weight:400}
+.gold{color:var(--gold)}
+.rule{width:64px;height:1px;background:var(--gold);border:0}
+
+/* status chips — 제안(안) vs 확정 구분 */
+.chip{display:inline-flex;align-items:center;gap:10px;height:34px;padding:0 16px;border:1px solid var(--gold);
+  border-radius:17px;font:600 14px/1 var(--sans);letter-spacing:.08em;color:var(--gold);white-space:nowrap}
+.chip::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.chip.done{border-color:var(--brown);color:var(--brown)}
+.t-dark .chip.done,.t-wine .chip.done{border-color:var(--ivory);color:var(--ivory)}
+.chip.tbd{border-style:dashed}
+.note{font:400 16px/1.6 var(--sans);color:var(--muted)}
+.t-dark .note,.t-wine .note{color:rgba(247,244,239,.55)}
+
+/* images */
+.ph{position:relative;overflow:hidden;background:var(--beige)}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph.warm img{filter:sepia(.22) saturate(.85) contrast(1.02) brightness(1.02)}
+.ph .cap{position:absolute;left:24px;bottom:20px;font:500 13px/1 var(--sans);letter-spacing:.14em;color:rgba(247,244,239,.85);text-transform:uppercase}
+
+/* product plate: SVG line art with optional photo overlay */
+.plate{position:relative;background:var(--beige);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.plate svg{width:46%;height:62%;color:var(--brown)}
+.plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t-dark .plate{background:#43362d}.t-dark .plate svg{color:var(--gold)}
+
+/* ---------- UI chrome (not printed) ---------- */
+.ui{position:fixed;left:0;right:0;bottom:0;height:56px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 24px;font:500 13px/1 var(--sans);letter-spacing:.12em;color:rgba(247,244,239,.75);
+  background:linear-gradient(transparent,rgba(20,15,12,.75));opacity:0;transition:opacity .3s;z-index:10}
+body:hover .ui,.ui:focus-within{opacity:1}
+.ui button{background:none;border:1px solid rgba(247,244,239,.35);color:inherit;font:inherit;letter-spacing:.12em;
+  height:32px;padding:0 14px;border-radius:16px;cursor:pointer;margin-left:8px}
+.ui button:hover{border-color:var(--gold);color:var(--gold)}
+.progress{position:fixed;left:0;top:0;height:2px;background:var(--gold);transition:width .5s ease;z-index:10}
+.help{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(20,15,12,.82);z-index:20;color:var(--ivory)}
+.help.on{display:flex}
+.help div{font:400 18px/2 var(--sans);letter-spacing:.02em}
+.help kbd{display:inline-block;min-width:34px;padding:0 8px;margin-right:12px;border:1px solid var(--gold);border-radius:4px;text-align:center;font:600 14px/26px var(--sans);color:var(--gold)}
+
+/* ---------- print / PDF: one slide per 16:9 page ---------- */
+@page{size:1920px 1080px;margin:0}
+@media print{
+  html,body{background:none;overflow:visible;height:auto}
+  .deck{position:static;transform:none!important;width:auto;height:auto}
+  .slide{position:relative;opacity:1;visibility:visible;page-break-after:always;break-after:page;transition:none}
+  .slide .rv{opacity:1;transform:none;transition:none}
+  .ui,.progress,.help{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
