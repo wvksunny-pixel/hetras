@@ -5,7 +5,7 @@
 - `home.html` — 같은 내용을 스크롤형 브랜드 홈페이지로 구성. 링크로 공유하거나 미팅 전후 열람용.
 
 ## 홈페이지 (home.html)
-- 구성: Hero → Vision(4,280개 확정 실적) → Why Christmas → Proposal 01(대상 · 선물 패키지 탭) → Proposal 02(향 5종, 마우스 올리면 메시지) → The Giving Room 도면 → 참여 4단계 → Impact · KPI → 동행 로드맵 · ‘함께 시작하기’(메일).
+- 구성: Hero → Vision(4,280개 지난 후원 결과보고) → Why Christmas → Proposal 01(대상 · 선물 패키지 탭) → Proposal 02(향 5종, 마우스 올리면 메시지) → The Giving Room 도면 → 참여 4단계 → Impact · KPI → 동행 로드맵 · ‘함께 시작하기’(메일).
 - 모바일 대응 · 움직임 줄이기 설정 존중. `home.html?static`으로 열면 애니메이션 없이 전체가 펼쳐져 캡처·점검에 편합니다.
 - 스타일 `assets/home.css`, 동작 `assets/home.js`. 이미지는 슬라이드와 같은 `assets/img`, `assets/products`를 씁니다.
 - 로컬 파일로 열어도 동작하지만, 글꼴은 인터넷 연결 시 불러옵니다.
@@ -42,7 +42,7 @@ export/*.pdf            생성된 PDF
   `diffuser.jpg`(Premium Diffuser) · `fabric-perfume.jpg`(Textile Perfume) · `hand-cream.jpg`(Perfume Hand Cream) · `hand-wash.jpg`(Perfume Bubble Hand Wash) · `body-care.jpg`(Hotel Therapy Body Lotion) · `hand-cream-kids.jpg`(Perfume Hand Cream Set)
   공식몰 600×600 썸네일이며 프로모션 배지(‘13향’, ‘5개 Set’)는 잘라냈습니다. 인쇄용 고해상도가 필요하면 헤트라스에 원본을 요청하세요.
 - **사진 교체**: `assets/img/`의 같은 파일명으로 덮어쓰기. 아동 얼굴이 보이는 사진은 쓰지 않습니다.
-- **상태 칩**: `chip done` = 확정 실적 / `chip` = 제안(안) / `chip tbd` = 협의 필요. 협의가 끝나면 class와 문구를 바꿔 주세요.
+- **상태 칩**: `chip done` = 지난 후원 결과보고 / `chip` = 제안(안) / `chip tbd` = 협의 필요. 협의가 끝나면 class와 문구를 바꿔 주세요.
 - **향 정보**: 8페이지 카드의 이름·감정·메시지. 색은 `slides.css`의 `.sw-cherry` 등에서 변경.
 - **색·서체 전체 변경**: `deck.css` 맨 위 `:root` 변수만 고치면 전 페이지에 반영됩니다.
 

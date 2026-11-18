@@ -23,7 +23,7 @@ if (new URLSearchParams(location.search).has('static')) document.documentElement
   }), { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
   document.querySelectorAll('.rv,.mask,.img-rv,.steps').forEach(el => io.observe(el));
 
-  // 숫자 카운트 (확정 실적)
+  // 숫자 카운트 (지난 후원 결과보고)
   document.querySelectorAll('[data-count]').forEach(el => {
     const end = +el.dataset.count;
     const run = () => {
