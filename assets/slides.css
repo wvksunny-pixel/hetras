@@ -188,3 +188,9 @@
 .s-gift .plate:has(img.fit){background:#fff}
 .s-gift .plate img.fit{object-fit:contain;padding:10px}
 .plate:has(img) svg{display:none}
+
+/* 지난 결과보고 링크 */
+.more{display:inline-flex;align-items:center;gap:10px;margin-top:14px;font:600 17px/1 var(--sans);color:var(--burgundy);border-bottom:1px solid currentColor;padding-bottom:6px;text-decoration:none;cursor:pointer}
+.more span{font:400 22px/1 var(--serif);transition:transform .3s}
+.more:hover span{transform:translateX(4px)}
+.t-dark .more{color:var(--gold)}

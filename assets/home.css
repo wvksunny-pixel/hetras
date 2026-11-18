@@ -311,3 +311,9 @@ footer a{border-bottom:1px solid rgba(247,244,239,.3)}
 .pages img{width:100%;aspect-ratio:16/9;object-fit:cover}
 .pages figcaption{font:500 11px/1 var(--sans);letter-spacing:.16em;color:var(--muted);padding:12px 14px;border-top:1px solid var(--line)}
 @media (max-width:760px){.pages{grid-template-columns:1fr 1fr}.pages figure:first-child{grid-column:1/-1}}
+
+/* 지난 결과보고 링크 */
+.more{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font:600 14px/1 var(--sans);letter-spacing:.02em;color:var(--burgundy);border-bottom:1px solid currentColor;padding-bottom:6px}
+.more span{font:400 18px/1 var(--serif);transition:transform .35s var(--ease)}
+.more:hover span{transform:translateX(5px)}
+.dark .more{color:var(--gold)}
